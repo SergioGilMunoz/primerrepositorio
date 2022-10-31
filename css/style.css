@@ -1,0 +1,575 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Quicksand:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/****HEADER****/
+.titulo div h1 {
+    background-color: #112938;
+    color: aliceblue;
+    font-size: 200%;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    padding: 15px;
+}
+
+.titulo div h1 span {
+    font-size: 130%;
+}
+
+.titulo nav {
+    display: flex;
+    justify-content: space-around;
+    /* separar los 2 div  */
+    align-items: center;
+    /*  alinear texto en el centro vertical */
+    padding: 10px 10px 0px 0px;
+}
+
+.titulo nav img {
+    /* tama;o de la imagen de la iglesia peque;a */
+    margin: 0px 10px 0px 30px;
+    width: 70px;
+    height: 70px;
+}
+
+.titulo nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header nav ul li {
+    /*  display:inline-block ESTA PROPIEDAD ALINEA DE FORMA HORIZINTAL*/
+    list-style: none;
+    /* para q no salgan los puntos negros */
+    padding: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    /* para q no salgan las lineas en las letras */
+    color: black;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    /* todas mayusculas */
+    letter-spacing: 4px;
+    /* esparacio entre las letras de las palabras  */
+    font-weight: bold;
+    /* letras un poco mas gruesas */
+    /* separacion de las palabras de la lista */
+    text-shadow: 2px 2px 10px black;
+}
+
+header nav ul li a:hover {
+    text-shadow: 3px 3px 20px black;
+}
+
+
+/************MAIN*********/
+
+.hero {
+    background-image: url(../img/fondo_iglesia.jpg);
+    width: 100%;
+    height: 140vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    /* alinear en horizontal */
+    align-items: center;
+}
+
+
+.hero h2 {
+    color: rgb(255, 255, 255);
+    font-size: 230%;
+    text-align: center;
+    background-color: rgba(10, 20, 30, 0.9);
+    /* color con transparencia */
+    padding: 50px;
+    text-transform: uppercase;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: normal;
+}
+
+.texto-qsomos {
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+    align-items: baseline;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 110%;
+    font-weight: 600;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+    padding: 3% 10% 3% 10%;
+}
+
+.texto-qsomos p {
+    text-align: center;
+    color: rgb(94, 94, 94);
+}
+
+/* -----------grids nos apoyamos del evangelio y adoracion------------*/
+.plantillas {
+    margin: 10px 0px 40px 0px;
+    display: grid;
+    grid-template-rows: 500px;
+    grid-template-columns: 450px 450px;
+    justify-content: space-around;
+}
+
+.plantillas-item {
+    padding: 5px;
+    text-align: center;
+}
+
+@media screen and (max-width:915px) {
+    .plantillas {
+        grid-template-columns: auto;
+    }
+}
+
+/* -----------grids ------------*/
+
+.plantillas-item img {
+    max-width: 100%; /* para hacer una imagejn responsiva */
+    height: auto;
+    box-shadow: 2px 2px 10px black;
+}
+
+.plantillas-item h3 {
+    padding: 30px;
+    font-size: 22px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+.plantillas-item span {
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    color: rgb(94, 94, 94);
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* -------------grid iframe---------- */
+.iframe {
+    background-color: #e1e4e6;
+    display: grid;
+    grid-template-rows: 500px;
+    grid-template-columns: 500px 500px;
+    justify-content: space-around;
+    padding: 30px 0px 30px 0px;
+}
+
+
+@media screen and (max-width:1027px) {
+    .iframe {
+        grid-template-columns: 60%;
+    }
+}
+
+
+
+/* -----------------grid------------------------ */
+
+#iframe {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 0 0;
+}
+
+.iframe-respon {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+
+.iframe-respon iframe {
+    box-shadow: 2px 2px 10px black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.iframe-item h3 {
+    padding: 30px;
+    font-size: 22px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.iframe-item span {
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    color: rgb(94, 94, 94);
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* -------------grid iframe---------- */
+
+/* ------------------footer---------------------- */
+
+.contactenos {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer section div h3 {
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    font-size: 40px;
+    padding: 50px 0px 100px 0px;
+}
+
+.contactenos div a img {
+    width: 50px;
+    height: 50px;
+    margin: 20px 20px 20px 20px;
+    transition-duration: 1s;
+}
+
+
+footer section h2 {
+    font-size: 8px;
+    padding: 100px 0px 100px 0px;
+    background-color: #e1e4e6;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 2px;
+}
+
+
+.redes img:hover {
+    transform: scale(1.1);
+}
+
+/* ------------------footer---------------------- */
+
+
+/************NOSOTROS**************/
+
+/* --------------nosotros1--------- */
+
+/* ----------grid--------------- */
+.plantilla-nosotros {
+    /*  padding: 50px 0px 600px 0px; */
+    display: grid;
+    grid-template-rows: 800px;
+    grid-template-columns: 450px 450px;
+    justify-content: space-around;
+}
+
+.plantilla-nosotros-item {
+    padding: 5px;
+    text-align: center;
+}
+
+
+@media screen and (max-width:915px) {
+    .plantilla-nosotros {
+        grid-template-columns: 90%;
+        grid-template-rows: max-content; /* no deja que se coloque otra grilla encima */
+    }
+}
+
+/* ----------grid--------------- */
+.plantilla-nosotros-item img {
+    max-width: 100%;
+    /* linea para ajustar imagen mientras va disminuyendo  */
+    height: auto;
+    /* el tamano de la pantalla */
+    box-shadow: 2px 2px 10px black;
+}
+
+.plantilla-nosotros-item h2 {
+    padding: 30px;
+    font-size: 22px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+.plantilla-nosotros-item li {
+    padding-top: 10px;
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    color: rgb(94, 94, 94);
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: left;  
+}
+
+/* --------------nosotros1--------- */
+
+/* --------------nosotros2--------- */
+/* ---------------------grid-------------------- */
+.plantilla-nosotros2 {
+    margin: 10px 0px 80px 0px;
+    padding-bottom: 50px;
+    display: grid;
+    grid-template-rows: 900px;
+    grid-template-columns: 500px 500px;
+    justify-content: space-around;
+    background-color: #e1e4e6;
+}
+
+.plantilla-nosotros-item2 {
+    padding: 5px;
+    text-align: center;
+}
+
+@media screen and (max-width:915px) {
+    .plantilla-nosotros2 {
+        grid-template-columns: 90%;
+        grid-template-rows: max-content;
+    }
+}
+
+/* ---------------------grid-------------------- */
+.plantilla-nosotros-item2 img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 2px 2px 10px black;
+}
+
+.plantilla-nosotros-item2 h2 {
+    padding: 30px;
+    font-size: 22px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+.plantilla-nosotros-item2 li {
+    padding-top: 10px;
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    color: rgb(94, 94, 94);
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: left;
+}
+
+
+
+
+/* --------------nosotros2--------- */
+
+
+/************PREDICAS*************/
+
+/* -------------------grid--------------------- */
+.predicas_meses1 {
+    display: grid;
+    grid-template-rows: 400px;
+    grid-template-columns: 500px 500px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 0px 30px 0px;
+}
+
+.predicas-parrafo {
+    padding: 10px 50px 0px 50px;
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    color: rgb(94, 94, 94);
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+}
+
+@media screen and (max-width:1000px) {
+    .predicas_meses1 {
+        grid-template-columns: auto;
+        grid-template-rows: max-content;
+    }
+
+    .predicas-meses-item1 h3 {
+        text-align: center;
+    }
+}
+@media screen and (max-width:500px) {
+    .predicas_meses1 {
+        grid-template-columns: 90%;
+    }
+}
+
+/* -------------------grid--------------------- */
+.predicas-meses-item1 h3 {
+    padding: 30px;
+    font-size: 22px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+#abc {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px 0 0;
+
+}
+
+.predicas-respon {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+
+
+.predicas-respon iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+/* -------------------predicas----------- */
+
+/***********MINISTERIO************/
+
+.carrusel {
+    margin: auto;
+    width: 800px;
+    height: 550px;
+}
+
+.ministerio {
+    display: grid;
+    grid-template-rows: 550px;
+    grid-template-columns: 500px 500px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ministerio-item {
+    text-align: center;
+}
+
+.ministerio-item h3 {
+    padding: 30px;
+    font-size: 22px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+.ministerio-item img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 2px 2px 10px black;
+    border-radius: 50%;
+}
+
+.ministerio-item p {
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    color: rgb(94, 94, 94);
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+@media screen and (max-width:1148px){
+     .ministerio {
+        grid-template-columns: 90%;
+        grid-template-rows: max-content;
+     } 
+     .carrusel{
+        padding: 0px 30px 0px 30px;
+        max-width: 100%;
+        height: auto;
+    } 
+}
+/**************CONTACTENOS**************/
+
+.datos {
+    display: grid;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 150px 50px;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    background-color: #e1e4e6;
+}
+
+.datos-item {
+    text-align: center;
+}
+
+.formulario h1 {
+    padding: 30px;
+    font-size: 22px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.datos-item h2 {
+    padding: 30px;
+    font-size: 22px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.datos-item label {
+    padding: 30px;
+    font-size: 22px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.datos-item input {
+    width: 300px;
+    font-size: 22px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+}
+
+.datos-item-radio input {
+    width: 20px;
+}
+
+.datos-item option {
+    padding: 30px;
+    font-size: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.datos-item-boton input {
+    text-align: center;
+}
