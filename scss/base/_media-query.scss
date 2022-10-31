@@ -1,0 +1,58 @@
+
+/* ----------INDEX---PLANTILLAS------ */
+@media screen and (max-width:915px) {
+    .plantillas {
+        grid-template-columns: auto;
+    }
+}
+/* ----------INDEX---IFRAME------ */
+@media screen and (max-width:1027px) {
+    .iframe {
+        grid-template-columns: 60%;
+    }
+}
+/* ----------NOSOTROS---PLANTILLA-NOSOTROS----- */
+@media screen and (max-width:1056px) {
+    .plantilla-nosotros {
+        grid-template-columns: 90%;
+        grid-template-rows: max-content; /* no deja que se coloque otra grilla encima */
+    }
+}
+/* ----------NOSOTROS---PLANTILLA-NOSOTROS2----- */
+@media screen and (max-width:1056px) {
+    .plantilla-nosotros2 {
+        grid-template-columns: 90%;
+        grid-template-rows: max-content;
+    }
+}
+/* ----------NOSOTROS---PREDICAS----- */
+@media screen and (max-width:1000px) {
+    .predicas_meses1 {
+        grid-template-columns: auto;
+        grid-template-rows: max-content;
+    }
+    .predicas-meses-item1 h3 {
+        text-align: center;
+    }
+}
+@media screen and (max-width:500px) {
+    .predicas_meses1 {
+        grid-template-columns: 90%;
+    }
+}
+/* ----------NOSOTROS---IGLESIA----- */
+@media screen and (max-width:1148px){
+    .ministerio {
+       grid-template-columns: 90%;
+       grid-template-rows: max-content;
+    } 
+    .carrusel{
+       padding: 0px 30px 0px 30px;
+       max-width: 100%;
+       height: auto;
+   } 
+}
+
+
+
+

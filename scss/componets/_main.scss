@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Quicksand:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* -----------MAIN---INDEX-------- */
+
+.hero {
+    background-image: url(../img/fondo_iglesia.jpg);
+    width: 100%;
+    height: 140vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    /* alinear en horizontal */
+    align-items: center;
+    h2 {
+        color: rgb(255, 255, 255);
+        font-size: 230%;
+        text-align: center;
+        background-color: rgba(10, 20, 30, 0.9);
+        /* color con transparencia */
+        padding: 50px;
+        text-transform: uppercase;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: normal;
+    }
+}
+.texto-qsomos {
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+    align-items: baseline;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 110%;
+    font-weight: 600;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+    padding: 3% 10% 3% 10%;
+    p {
+        text-align: center;
+        color: rgb(94, 94, 94);
+    }
+}
+.plantillas {
+    margin: 10px 0px 40px 0px;
+    display: grid;
+    grid-template-rows: 500px;
+    grid-template-columns: 450px 450px;
+    justify-content: space-around;
+    .plantillas-item {
+        padding: 5px;
+        text-align: center;
+        img {
+            max-width: 100%; /* para hacer una imagejn responsiva */
+            height: auto;
+            box-shadow: 2px 2px 10px black;
+        }
+        h3 {
+            padding: 30px;
+            font-size: 22px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: bold;
+            color: black;
+        }
+        span {
+            font-size: 15px;
+            font-family: 'Quicksand', sans-serif;
+            color: rgb(94, 94, 94);
+            font-weight: 600;
+            line-height: 1.5;
+            text-align: center;
+        }
+    }
+}
+.iframe {
+    background-color: #e1e4e6;
+    display: grid;
+    grid-template-rows: 500px;
+    grid-template-columns: 500px 500px;
+    justify-content: space-around;
+    padding: 30px 0px 30px 0px;
+    .iframe-item {
+        h3 {
+            padding: 30px;
+            font-size: 22px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+        }
+        span {
+            font-size: 15px;
+            font-family: 'Quicksand', sans-serif;
+            color: rgb(94, 94, 94);
+            font-weight: 600;
+            line-height: 1.5;
+            text-align: justify;
+        } 
+        .iframe-respon {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            position: relative;
+            iframe {
+                box-shadow: 2px 2px 10px black;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }  
+    }
+}
+#iframe {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 0 0;
+    
+}
+
+/* -----------MAIN---INDEX-------- */
+/* -----------MAIN---NOSOTROS-------- */
+.plantilla-nosotros {
+    /*  padding: 50px 0px 600px 0px; */
+    display: grid;
+    grid-template-rows: 1000px;
+    grid-template-columns: 450px 450px;
+    justify-content: space-around;
+    .plantilla-nosotros-item {
+        padding: 5px;
+        text-align: center;
+        img {
+            max-width: 100%;
+            /* linea para ajustar imagen mientras va disminuyendo  */
+            height: auto;
+            /* el tamano de la pantalla */
+            box-shadow: 2px 2px 10px black;
+        }
+        h2 {
+            padding: 30px;
+            font-size: 22px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: bold;
+            color: black;
+        }
+        li {
+            padding-top: 10px;
+            font-size: 15px;
+            font-family: 'Quicksand', sans-serif;
+            color: rgb(94, 94, 94);
+            font-weight: 600;
+            line-height: 1.5;
+            text-align: left;  
+        }
+    }
+}
+.plantilla-nosotros2 {
+    margin: 10px 0px 80px 0px;
+    padding-bottom: 50px;
+    display: grid;
+    grid-template-rows: 900px;
+    grid-template-columns: 500px 500px;
+    justify-content: space-around;
+    background-color: #e1e4e6;
+    .plantilla-nosotros-item2 {
+        padding: 5px;
+        text-align: center;
+        img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 2px 2px 10px black;
+        }
+        h2 {
+            padding: 30px;
+            font-size: 22px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: bold;
+            color: black;
+        }
+        li {
+            padding-top: 10px;
+            font-size: 15px;
+            font-family: 'Quicksand', sans-serif;
+            color: rgb(94, 94, 94);
+            font-weight: 600;
+            line-height: 1.5;
+            text-align: left;
+        }
+    }
+}
+/* -----------MAIN---NOSOTROS-------- */
+/* -----------MAIN---PREDICAS-------- */
+.predicas_meses1 {
+    display: grid;
+    grid-template-rows: 400px;
+    grid-template-columns: 500px 500px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 0px 30px 0px;
+    .predicas-parrafo {
+        padding: 10px 50px 0px 50px;
+        font-size: 15px;
+        font-family: 'Quicksand', sans-serif;
+        color: rgb(94, 94, 94);
+        font-weight: 600;
+        line-height: 1.5;
+        text-align: center;
+    }
+    .predicas-meses-item1 h3 {
+        padding: 30px;
+        font-size: 22px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: bold;
+        color: black;
+    }
+}
+#abc {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px 0 0;
+    .predicas-respon {
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+        iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+    }
+}
+/* -----------MAIN---PREDICAS-------- */
+/* -----------MAIN---MINISTERIO-------- */
+.carrusel {
+    margin: auto;
+    width: 800px;
+    height: 550px;
+}
+.ministerio {
+    display: grid;
+    grid-template-rows: 550px;
+    grid-template-columns: 500px 500px;
+    justify-content: space-around;
+    align-items: center;
+    .ministerio-item {
+        text-align: center;
+        h3 {
+            padding: 30px;
+            font-size: 22px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: bold;
+            color: black;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 2px 2px 10px black;
+            border-radius: 50%;
+        }
+        p {
+            font-size: 15px;
+            font-family: 'Quicksand', sans-serif;
+            color: rgb(94, 94, 94);
+            font-weight: 600;
+            line-height: 1.5;
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }        
+    }
+}
+/* -----------MAIN---MINISTERIO-------- */
+/* -----------MAIN---CONTACTENOS-------- */
+.formulario {
+    h1 {
+        padding: 30px;
+        font-size: 22px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: bold;
+        color: black;
+        text-align: center;
+    }
+    .datos {
+        display: grid;
+        grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 150px 50px;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        background-color: #e1e4e6;
+        .datos-item {
+            text-align: center;
+            h2 {
+                padding: 30px;
+                font-size: 22px;
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: bold;
+                color: black;
+                text-align: center;
+            }
+            label {
+                padding: 30px;
+                font-size: 22px;
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: bold;
+                color: black;
+                text-align: center;
+            }
+            input {
+                width: 300px;
+                font-size: 22px;
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: bold;
+                color: black;
+                text-align: left;
+            }
+            .datos-item-radio {
+                input {
+                    width: 20px;
+                }
+            }
+            option {
+                padding: 30px;
+                font-size: 15px;
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: bold;
+                color: black;
+                text-align: center;
+            }
+            .datos-item-boton {
+                input {
+                    text-align: center;
+                }
+            }
+        }   
+    } 
+} 
+/* -----------MAIN---CONTACTENOS-------- */

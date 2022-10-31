@@ -1,0 +1,66 @@
+/* HEADER */
+
+.titulo {
+    div {
+        h1 {
+            background-color: #112938;
+            color: aliceblue;
+            font-size: 200%;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            padding: 15px;
+
+            span {
+                font-size: 130%;
+            }
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-around;
+        /* separar los 2 div  */
+        align-items: center;
+        /*  alinear texto en el centro vertical */
+        padding: 10px 10px 0px 0px;
+
+        img {
+            /* tama;o de la imagen de la iglesia peque;a */
+            margin: 0px 10px 0px 30px;
+            width: 70px;
+            height: 70px;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                /*  display:inline-block ESTA PROPIEDAD ALINEA DE FORMA HORIZINTAL*/
+                list-style: none;
+                /* para q no salgan los puntos negros */
+                padding: 20px;
+                a {
+                    text-decoration: none;
+                    /* para q no salgan las lineas en las letras */
+                    color: black;
+                    font-family: 'Quicksand', sans-serif;
+                    text-transform: uppercase;
+                    /* todas mayusculas */
+                    letter-spacing: 4px;
+                    /* esparacio entre las letras de las palabras  */
+                    font-weight: bold;
+                    /* letras un poco mas gruesas */
+                    /* separacion de las palabras de la lista */
+                    text-shadow: 2px 2px 10px black;
+
+                    &:hover {
+                        text-shadow: 3px 3px 20px black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* -----------HEADER--------- */
