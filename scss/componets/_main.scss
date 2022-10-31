@@ -60,7 +60,7 @@
         padding: 5px;
         text-align: center;
         img {
-            max-width: 100%; /* para hacer una imagejn responsiva */
+            max-width: 100%; /* para hacer una imagen responsiva */
             height: auto;
             box-shadow: 2px 2px 10px black;
         }
@@ -129,7 +129,6 @@
 /* -----------MAIN---INDEX-------- */
 /* -----------MAIN---NOSOTROS-------- */
 .plantilla-nosotros {
-    /*  padding: 50px 0px 600px 0px; */
     display: grid;
     grid-template-rows: 1000px;
     grid-template-columns: 450px 450px;
