@@ -7,6 +7,169 @@
     <title>ICVYR | Contactenos</title>
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+
+    <script
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+  crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+    
+        //manejo de DOM
+
+        let AgregaSelectorIglesias = ( mostrar) => {
+            let div = $("#select_iglesia");
+            let html ="";
+            let options ="";
+ 
+
+            if (mostrar) {
+                html = ` <label for="Si">Seleccione su Iglesia</label> 
+                        <select name="select" id="iglesia" onchange='OtraIglesia(this)'>  ` ;
+
+                $.ajax({
+                    url: "http://localhost:3000/api/iglesias",
+                    type: "GET",
+                    dataType: 'json',
+                    success: function(result) { 
+                        $.each(result.data, function(key, value) {
+                            
+                            options +=" <option value='"+value.name+"'>"+  value.name  +"</option> " ; 
+                         });
+
+                         html += options +` </select>` ;
+                         div.html (html); 
+                    }
+                });   
+            }
+            else {
+
+                div.html (''); 
+
+            } 
+        };
+
+        // registrar contacto
+
+
+        let Seguro = ()=> {
+
+
+            if ($("#nombre").val()==""){
+            
+            Swal.fire({
+            icon: 'error',
+            title: 'Datos incompletos...',
+            text: 'Ingrese el nombre!',
+            footer: '<a href="">Ingrese el nombre</a>'
+            })
+
+            return ;
+       }
+       if ($("#apellido").val()==""){
+        Swal.fire({
+            icon: 'error',
+            title: 'Datos incompletos...',
+            text: 'Ingrese el apellido!',
+            footer: '<a href="">Ingrese el apellido</a>'
+            })
+
+            return ;
+        }
+
+        if ($("#correo").val()==""){
+            Swal.fire({
+            icon: 'error',
+            title: 'Datos incompletos...',
+            text: 'Ingrese el correo!',
+            footer: '<a href="">Ingrese el correo</a>'
+            })
+
+        return ;
+        }
+
+
+
+            Swal.fire({
+            title: 'Seguro de continuar con el registro del formulario?',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Enviar',
+            denyButtonText: `No enviar`,
+            }).then((result) => {
+            
+            if (result.isConfirmed) {
+                RegistraFormulario()
+               
+            } else if (result.isDenied) {
+                Swal.fire('Se cancelo el registro', '', 'info')
+            }
+        })
+ 
+
+        }
+
+        let RegistraFormulario = ()=> {
+       
+
+            let  NombreIglesia ="";
+
+            if ( $("input[name='pregunta_iglesia']:checked").val() =='si'){
+                    if ($("#iglesia").val()=="Otro"){
+                        NombreIglesia =  $("#otra_iglesia").val() ;
+
+                    }else {
+                        NombreIglesia = $("#iglesia").val() ;
+                    }
+                
+            } else {
+                NombreIglesia = ''
+            }
+           
+            var datax = {
+                nombre: $("#nombre").val() ,
+                apellido: $("#apellido").val(),
+                correo: $("#correo").val(),
+                genero: $("input[name='pregunta_genero']:checked").val(),
+                pais : $("#pais").val(), 
+                miembro: $("input[name='pregunta_iglesia']:checked").val(),
+                iglesia: NombreIglesia
+            } ;
+
+            $.ajax({
+                url: "/api/registrar",
+                type: "POST",
+                data:datax,
+                dataType: 'json',
+                    success: function(result) {
+
+                        Swal.fire('Enviado!', '', 'success')
+                        AgregaSelectorIglesias(false)
+                        OtraIglesia('')
+                        document.getElementById("form").reset()
+                    }
+            });  
+       
+}   
+let OtraIglesia = (value)=> {
+ 
+
+let div = $("#input_iglesia");
+    if (value.value=='Otro'){
+       
+        let html = "<label>Ingrese su iglesia:</label><input id='otra_iglesia' type='text'>"
+
+        div.html (html); 
+    }
+    else {
+        div.html (''); 
+    }
+
+}
+    
+    </script>
+
 </head>
 <body>
     <header class="titulo">
@@ -25,7 +188,10 @@
         </nav>
     </header>
     <main>
+
+        <form id="form">
         <section class="formulario">
+       
             <h1>Formulario:</h1>
             <section class="datos">
                 <div class="datos-item"> 
@@ -33,41 +199,62 @@
                 </div>
                 <div class="datos-item">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" >
+                    <input type="text" name="nombre" id="nombre" required>
                 </div>
                 <div class="datos-item">
                     <label for="apellido">Apellido:</label>
-                    <input type="text" name="apellido">
+                    <input type="text" name="apellido" id="apellido" required>
                 </div>
                 <div class="datos-item">
                     <label for="correo">Correo:</label>
-                    <input type="text" name="correo">
+                    <input type="text" name="correo" id='correo' required>
                 </div>
-                <div class="datos-item">
-                    <label for="contrasena">Contraseña :</label>
-                    <input type="password" name="contrasena">
-                </div>
+               
                 <div class="datos-item">
                     <h2>Genero</h2>
                 </div>    
                     <div class="datos-item">
                         <div class="datos-item-radio">
                             <label for="masculino">Masculino</label>
-                            <input type="radio" name="masculino">
+                            <input checked id="pregunta_genero" type="radio" name="pregunta_genero" value="masculino">
                             <label for="femenino">Femenino</label>
-                            <input type="radio" name="femenino">
+                            <input id="pregunta_genero" type="radio" name="pregunta_genero"  value="femenino">
                         </div>
                     </div>
                    <div class="datos-item">
                         <h2>Pais</h2>
                    </div>
                     <div class="datos-item">
-                        <select name="select"> Pais
+                        <select name="select" required> Pais
                             <option value="">Peru</option>
                             <option value="">Argentina</option>}
                             <option value="">Bolivia</option>
                         </select>
                     </div>
+
+                    <div class="datos-item">
+                        <h2>¿Es miembro de una iglesia?</h2>
+                    </div> 
+                   
+                    <div class="datos-item">
+                            <div class="datos-item-radio">
+                            <label for="Si">Si</label>
+                            <input   type="radio" value="si" id ="pregunta_iglesia" name ="pregunta_iglesia" onclick="AgregaSelectorIglesias(true)">
+                            <label for="No">No</label>
+                            <input checked type="radio" value="no" id ="pregunta_iglesia" name ="pregunta_iglesia" onclick="AgregaSelectorIglesias(false)"> 
+                        </div>
+                    </div>
+                    
+                    <div class="datos-item" id="select_iglesia">
+                        
+                    </div>
+                    <div class="datos-item" id="input_iglesia">
+                        
+                    </div>
+
+                   
+
+                     <br>
                 <div class="datos-item">
                     <label for="cometario">Escribe aqui un comentario</label>
                 </div>
@@ -76,11 +263,14 @@
                 </div>
                 <div class="datos-item">
                     <div class="datos-item-boton">
-                        <input type="submit" value="Enviar Formulario">
-                        <input type="reset" value="Borrar">
+                        <input type="button" value="Enviar Formulario" onclick="Seguro()">
+                        <input type="reset" value="Borrar" onclick="AgregaSelectorIglesias(false)">
                     </div>
                 </div>
         </section>
+
+    </section>
+</form>
     </main>
     <footer class="foter">
         <section class="contactenos">
