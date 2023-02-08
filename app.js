@@ -25,12 +25,13 @@ var iglesias = {data:[
      {name: 'Otro' }
   ]};
 
+
 app.get('/api/iglesias', function(req, res, next){ 
     res.setHeader('Content-Type', 'application/json');
     res.json(iglesias); 
   });
 
-
+  
   app.post('/api/registrar', function(req, res) {  
     console.log ("Un contacto nuevo ingreso por la web...")
      

@@ -15,8 +15,6 @@
   crossorigin="anonymous"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <script src="/js/formulario.js"></script>
-    
 
     
     
@@ -43,44 +41,38 @@
         <form id="form">
         <section class="formulario">
        
-            <h1>Formulario:</h1>
+            <h1>Documento a Imprimir:</h1>
             <section class="datos">
                 <div class="datos-item"> 
                     <h2>Datos</h2>
                 </div>
                 <div class="datos-item">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre" required>
+                    <label id="nombreValue"></label>
                 </div>
                 <div class="datos-item">
                     <label for="apellido">Apellido:</label>
-                    <input type="text" name="apellido" id="apellido" required>
+                    <label id="apellidoValue"></label>
                 </div>
                 <div class="datos-item">
                     <label for="correo">Correo:</label>
-                    <input type="text" name="correo" id='correo' required>
+                    <label id="correoValue"></label>
                 </div>
                
                 <div class="datos-item">
-                    <h2>Genero</h2>
+                    <h2>Genero:</h2>
                 </div>    
                     <div class="datos-item">
                         <div class="datos-item-radio">
-                            <label for="masculino">Masculino</label>
-                            <input checked id="pregunta_genero" type="radio" name="pregunta_genero" value="masculino">
-                            <label for="femenino">Femenino</label>
-                            <input id="pregunta_genero" type="radio" name="pregunta_genero"  value="femenino">
+                            <label id="generoValue"> </label>
+                            
                         </div>
                     </div>
                    <div class="datos-item">
-                        <h2>Pais</h2>
+                        <h2>Pais:</h2>
                    </div>
                     <div class="datos-item">
-                        <select name="select" id="pais" required> Pais
-                            <option value="Peru">Peru</option>
-                            <option value="Argentina">Argentina</option>}
-                            <option value="Bolivia">Bolivia</option>
-                        </select>
+                       <label id="paisValue"></label>
                     </div>
 
                     <div class="datos-item">
@@ -88,34 +80,22 @@
                     </div> 
                    
                     <div class="datos-item">
-                            <div class="datos-item-radio">
-                            <label for="Si">Si</label>
-                            <input   type="radio" value="si" id ="pregunta_iglesia" name ="pregunta_iglesia" onclick="AgregaSelectorIglesias(true)">
-                            <label for="No">No</label>
-                            <input checked type="radio" value="no" id ="pregunta_iglesia" name ="pregunta_iglesia" onclick="AgregaSelectorIglesias(false)"> 
+                            <label id="iglesiaValue"></label>                            
                         </div>
                     </div>
                     
-                    <div class="datos-item" id="select_iglesia">
-                        
-                    </div>
-                    <div class="datos-item" id="input_iglesia">
-                        
-                    </div>
+                              
 
-                   
-
-                     <br>
-                <div class="datos-item">
-                    <label for="cometario">Escribe aqui un comentario</label>
+                    <div class="datos-item">
+                    <label for="cometario">Comentario</label>
                 </div>
                 <div class="datos-item">    
-                    <textarea name="" id="comentario" cols="30" rows="10"></textarea>
+                    <textarea name="" id="comentarioValue" cols="30" rows="10" readonly></textarea>
                 </div>
                 <div class="datos-item">
                     <div class="datos-item-boton">
-                        <input type="submit" value="Enviar Formulario">
-                        <input type="reset" value="Borrar" onclick="AgregaSelectorIglesias(false)">
+                        <input type="button" value="Imprimir Formulario" onclick="print()">
+                        
                     </div>
                 </div>
         </section>
@@ -139,5 +119,7 @@
      </footer>
 </body>
 
-<script src="/js/formulario2.js"></script>
+
+<script src="/js/imprimir.js"></script>
+    
 </html>
